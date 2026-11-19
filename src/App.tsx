@@ -105,6 +105,7 @@ function App(): JSX.Element {
         {formSteps.map(
           (step: StepTypes): JSX.Element => (
             <button
+              type="button"
               key={step.id}
               className="group flex items-center gap-4 hover:cursor-pointer focus-visible:outline-0 disabled:hover:cursor-no-drop"
               onClick={() => handleChangeSelectedStep(step.id)}
