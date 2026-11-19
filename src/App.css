@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url(./assets/fonts/Ubuntu-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url(./assets/fonts/Ubuntu-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Ubuntu";
+  src: url(./assets/fonts/Ubuntu-Bold.ttf);
+  font-weight: 700;
+}
+
+@theme {
+  --font-ubuntu: "Ubuntu", sans-serif;
+  --color-primary-950: hsl(213, 96%, 18%);
+  --color-primary-600: hsl(243, 100%, 62%);
+  --color-primary-300: hsl(228, 100%, 84%);
+  --color-primary-200: hsl(206, 94%, 87%);
+  --color-primary-500: hsl(354, 84%, 57%);
+  --color-secondary-500: hsl(231, 11%, 63%);
+  --color-secondary-200: hsl(229, 24%, 87%);
+  --color-secondary-100: hsl(218, 100%, 97%);
+  --color-secondary-50: hsl(231, 100%, 99%);
+
+  --sidebar-desktop-bg: url(./assets/images/bg-sidebar-desktop.svg);
+  --sidebar-mobile-bg: url(./assets/images/bg-sidebar-mobile.svg);
+}
+
+@layer components {
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .step-card {
+    @apply flex-1 max-w-full sm:max-w-112.5 mx-0 sm:mx-auto flex flex-col justify-between;
+  }
+
+  .info-card {
+    @apply bg-white px-6 sm:px-0 sm:pl-4 md:pl-0 py-8 sm:py-0 rounded-xl sm:rounded-none -mt-18 sm:mt-0 mx-4 sm:mx-0 shadow-[0px_8px_15px_-6px_hsl(213deg_96%_18%/10%)] sm:shadow-none;
+  }
+
+  .step-title {
+    @apply text-[1.7rem] sm:text-[2rem] leading-[1.2] font-bold text-primary-950;
+  }
+
+  .step-body {
+    @apply text-lg md:text-[1rem] text-secondary-500 leading-[1.4] md:leading-4 mt-2 md:mt-3;
+  }
+
+  .form-space {
+    @apply mt-6 sm:mt-11;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium leading-4 text-primary-950;
+  }
+
+  .form-input {
+    @apply h-10 sm:h-12 w-full px-4 mt-1 sm:mt-2 rounded-sm sm:rounded-lg border border-secondary-200 font-medium text-primary-950 placeholder:text-secondary-500 focus-visible:border-primary-600 focus-visible:outline-0;
+  }
+
+  .input-error {
+    @apply border-primary-500 focus-visible:border-primary-600;
+  }
+
+  .btns-box {
+    @apply flex bg-white p-4 sm:p-0 sm:pl-4 md:pl-0;
+  }
+
+  .prev-btn {
+    @apply font-medium text-secondary-500 transition-colors duration-200 hover:cursor-pointer hover:text-primary-950 focus-visible:outline-0 focus-visible:text-primary-950;
+  }
+
+  .form-btn {
+    @apply h-10 sm:h-12 w-24.5 sm:w-31 rounded-sm sm:rounded-lg bg-primary-950 font-medium text-secondary-100 transition-colors duration-200 hover:bg-[hsl(213deg_94.95%_26.47%)] hover:cursor-pointer focus-visible:bg-[hsl(213deg_94.95%_26.47%)] focus-visible:outline-0;
+  }
+}
