@@ -1,5 +1,4 @@
 import { useState, type ChangeEvent, type JSX } from "react";
-import "./App.css";
 
 import {
   type AddOnsTypes,
@@ -99,7 +98,7 @@ function App(): JSX.Element {
     setIsConfirmed(true);
   };
   return (
-    <main className="sm:p-4 h-full sm:h-fit font-ubuntu sm:bg-white max-w-235 sm:rounded-xl flex-1 flex flex-col sm:flex-row sm:shadow-[0px_8px_15px_-6px_hsl(213deg_96%_18%/10%)]">
+    <main className="sm:p-4 h-full sm:h-fit sm:bg-white max-w-235 sm:rounded-xl flex-1 flex flex-col sm:flex-row sm:shadow-[0px_8px_15px_-6px_hsl(213deg_96%_18%/10%)]">
       <h1 className="sr-only">Multi-Step Form</h1>
       <aside className="w-full sm:w-68.5 h-43 sm:h-142 px-8 py-8 sm:py-10 flex sm:flex-col items-start justify-center sm:justify-start gap-4 sm:gap-7.5 bg-(image:--sidebar-mobile-bg) sm:bg-(image:--sidebar-desktop-bg) bg-cover bg-center bg-no-repeat">
         {formSteps.map(
