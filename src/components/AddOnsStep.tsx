@@ -3,6 +3,7 @@ import type {
   AddOnsStepPropsTypes,
   AddOnsTypes,
 } from "../data_and_types/types";
+import StepTitle from "./StepTitle";
 
 import checkMark from "../assets/images/icon-checkmark.svg";
 
@@ -15,7 +16,7 @@ export default function AddOnsStep({
   return (
     <article className="step-card">
       <div className="info-card">
-        <h2 className="step-title">Pick add-ons</h2>
+        <StepTitle>Pick add-ons</StepTitle>
         <p className="step-body">
           Add-ons help enhance your gaming experience.
         </p>
@@ -26,7 +27,7 @@ export default function AddOnsStep({
               return (
                 <div
                   key={add.title}
-                  className="relative flex items-center px-4 sm:px-6 py-3.5 rounded-lg border border-secondary-200 has-checked:border-primary-600 has-checked:bg-secondary-200/20 hover:border-primary-600"
+                  className="relative flex items-center px-4 sm:px-6 py-3.5 rounded-lg border border-secondary-200 has-checked:border-primary-600 has-checked:bg-secondary-200/20 hover:border-primary-600 has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-primary-600"
                 >
                   <label
                     htmlFor={inputId}
@@ -36,11 +37,12 @@ export default function AddOnsStep({
                     <input
                       type="checkbox"
                       name="add-ons"
+                      aria-label={add.title}
                       id={inputId}
                       value={inputId}
                       checked={add.checked}
                       onChange={(e) => handleChangeAddOnsStatus(e, add.title)}
-                      className="peer appearance-none size-5 rounded-sm border border-secondary-200 transition-colors duration-200 checked:bg-primary-600 checked:border-primary-600"
+                      className="peer appearance-none size-5 rounded-sm border border-secondary-200 transition-colors duration-200 checked:bg-primary-600 checked:border-primary-600 focus-visible:outline-0"
                     />
                     <img
                       src={checkMark}

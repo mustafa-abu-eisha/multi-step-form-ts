@@ -4,6 +4,7 @@ import {
   type UserErrors,
   type UserInfoTypes,
 } from "../data_and_types/types";
+import StepTitle from "./StepTitle";
 
 export default function InfoStep({
   userInfo,
@@ -61,7 +62,7 @@ export default function InfoStep({
   return (
     <article className="step-card">
       <div className="info-card">
-        <h2 className="step-title">Personal info</h2>
+        <StepTitle>Personal info</StepTitle>
         <p className="step-body">
           Please provide your name, email address, and phone number.
         </p>
@@ -72,7 +73,10 @@ export default function InfoStep({
                 Name
               </label>
               {formErrors.fullName && (
-                <p className="font-bold text-[0.9375rem] leading-4 text-primary-500">
+                <p
+                  id="name-error"
+                  className="font-bold text-[0.9375rem] leading-4 text-primary-500"
+                >
                   {formErrors.fullName}
                 </p>
               )}
@@ -80,9 +84,11 @@ export default function InfoStep({
             <input
               type="text"
               id="full-name"
+              aria-invalid={Boolean(formErrors.fullName)}
+              aria-describedby={formErrors.fullName ? "name-error" : undefined}
               placeholder="e.g. Stephen King"
               className={`form-input ${formErrors.fullName ? "input-error" : ""}`}
-              autoComplete="off"
+              autoComplete="name"
               value={userInfo.fullName}
               onChange={(e) => handleChange(e, "fullName")}
             />
@@ -93,17 +99,24 @@ export default function InfoStep({
                 Email Address
               </label>
               {formErrors.emailAddress && (
-                <p className="font-bold text-[0.9375rem] leading-4 text-primary-500">
+                <p
+                  id="email-error"
+                  className="font-bold text-[0.9375rem] leading-4 text-primary-500"
+                >
                   {formErrors.emailAddress}
                 </p>
               )}
             </div>
             <input
-              type="text"
+              type="email"
               id="email-address"
+              aria-invalid={Boolean(formErrors.emailAddress)}
+              aria-describedby={
+                formErrors.emailAddress ? "email-error" : undefined
+              }
               placeholder="e.g. stephenking@lorem.com"
               className={`form-input ${formErrors.emailAddress ? "input-error" : ""}`}
-              autoComplete="off"
+              autoComplete="email"
               value={userInfo.emailAddress}
               onChange={(e) => handleChange(e, "emailAddress")}
             />
@@ -114,17 +127,24 @@ export default function InfoStep({
                 Phone Number
               </label>
               {formErrors.phoneNumber && (
-                <p className="font-bold text-[0.9375rem] leading-4 text-primary-500">
+                <p
+                  id="phone-error"
+                  className="font-bold text-[0.9375rem] leading-4 text-primary-500"
+                >
                   {formErrors.phoneNumber}
                 </p>
               )}
             </div>
             <input
-              type="text"
+              type="tel"
               id="phone-number"
+              aria-invalid={Boolean(formErrors.phoneNumber)}
+              aria-describedby={
+                formErrors.phoneNumber ? "phone-error" : undefined
+              }
               placeholder="e.g. +1 234 567 890"
               className={`form-input ${formErrors.phoneNumber ? "input-error" : ""}`}
-              autoComplete="off"
+              autoComplete="tel"
               value={userInfo.phoneNumber}
               onChange={(e) => handleChange(e, "phoneNumber")}
             />

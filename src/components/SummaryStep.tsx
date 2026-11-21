@@ -5,6 +5,7 @@ import type {
   SummaryStepPropsTypes,
 } from "../data_and_types/types";
 import { plans } from "../data_and_types/plans";
+import StepTitle from "./StepTitle";
 
 export default function SummaryStep({
   planName,
@@ -40,7 +41,7 @@ export default function SummaryStep({
   return (
     <article className="step-card">
       <div className="info-card">
-        <h2 className="step-title">Finishing up</h2>
+        <StepTitle>Finishing up</StepTitle>
         <p className="step-body">
           Double-check everything looks OK before confirming.
         </p>
@@ -52,7 +53,7 @@ export default function SummaryStep({
               </h3>
               <button
                 type="button"
-                className="text-secondary-500 underline transition-colors duration-200 hover:cursor-pointer hover:text-primary-600 focus-visible:outline-0 focus-visible:text-primary-600"
+                className="text-secondary-500 underline rounded-sm sm:rounded-lg transition-colors duration-200 hover:cursor-pointer hover:text-primary-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-950 focus-visible:text-primary-600"
                 onClick={() => handleChangeSelectedStep(2)}
               >
                 Change
@@ -100,7 +101,7 @@ export default function SummaryStep({
         </button>
         <button
           type="button"
-          className="flex-center form-btn bg-primary-600 hover:bg-primary-600/55 focus-visible:bg-primary-600/55"
+          className="flex-center form-btn bg-primary-600 hover:bg-primary-600/55 focus-visible:bg-primary-600/55 focus-visible:outline-primary-600"
           onClick={handleChangeConfirmStatus}
         >
           Confirm

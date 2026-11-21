@@ -2,6 +2,7 @@ import type { JSX } from "react";
 
 import { plans } from "../data_and_types/plans";
 import type { PlansStepPropsType, PlansTypes } from "../data_and_types/types";
+import StepTitle from "./StepTitle";
 
 export default function PlansStep({
   planName,
@@ -14,7 +15,7 @@ export default function PlansStep({
   return (
     <article className="step-card">
       <div className="info-card">
-        <h2 className="step-title">Select your plan</h2>
+        <StepTitle>Select your plan</StepTitle>
         <p className="step-body">
           You have the option of monthly or yearly billing.
         </p>
@@ -26,7 +27,7 @@ export default function PlansStep({
               return (
                 <div
                   key={plan.planName}
-                  className="relative flex-1 flex sm:flex-col sm:justify-between items-start px-4 py-4 sm:pt-5 sm:pb-4 gap-3.5 sm:gap-0 leading-[1.1] sm:leading-[1.3] border border-secondary-200 rounded-lg transition-colors duration-200 has-checked:border-primary-600 has-checked:bg-secondary-200/20 hover:border-primary-600"
+                  className="relative flex-1 flex sm:flex-col sm:justify-between items-start px-4 py-4 sm:pt-5 sm:pb-4 gap-3.5 sm:gap-0 leading-[1.1] sm:leading-[1.3] border border-secondary-200 rounded-lg transition-colors duration-200 has-checked:border-primary-600 has-checked:bg-secondary-200/20 hover:border-primary-600 has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-primary-600"
                 >
                   <img src={plan.icon} alt="" className="mt-1 sm:mt-0" />
 
@@ -35,13 +36,14 @@ export default function PlansStep({
                     name="plan"
                     id={inputId}
                     value={inputId}
-                    className="hidden appearance-none"
+                    className="sr-only"
                     checked={inputId === planName}
                     onChange={handleChangePlan}
                   />
                   <label
                     htmlFor={inputId}
                     className="absolute inset-0 cursor-pointer"
+                    aria-label={plan.planName}
                   ></label>
                   <div className="pt-0 sm:pt-8.25">
                     <h3 className="font-medium text-primary-950 text-lg">

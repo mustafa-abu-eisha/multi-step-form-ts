@@ -74,10 +74,10 @@
   }
 
   .prev-btn {
-    @apply font-medium text-secondary-500 transition-colors duration-200 hover:cursor-pointer hover:text-primary-950 focus-visible:outline-0 focus-visible:text-primary-950;
+    @apply font-medium text-secondary-500 rounded-sm sm:rounded-lg transition-colors duration-200 hover:cursor-pointer hover:text-primary-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-950 focus-visible:text-primary-950;
   }
 
   .form-btn {
-    @apply h-10 sm:h-12 w-24.5 sm:w-31 rounded-sm sm:rounded-lg bg-primary-950 font-medium text-secondary-100 transition-colors duration-200 hover:bg-[hsl(213deg_94.95%_26.47%)] hover:cursor-pointer focus-visible:bg-[hsl(213deg_94.95%_26.47%)] focus-visible:outline-0;
+    @apply h-10 sm:h-12 w-24.5 sm:w-31 rounded-sm sm:rounded-lg bg-primary-950 font-medium text-secondary-100 transition-colors duration-200 hover:bg-[hsl(213deg_94.95%_26.47%)] hover:cursor-pointer focus-visible:bg-[hsl(213deg_94.95%_26.47%)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-950;
   }
 }
